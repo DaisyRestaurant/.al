@@ -1,826 +1,653 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Daisy Restaurant & Vinoteke</title>
-
+<title>Daisy Restaurant & Vinoteke - Menu</title>
 <style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ece7db;
+    font-family: 'Liberation Serif', 'DejaVu Serif', Georgia, serif;
+    color: #3a2e28;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px;
+  }
+  .page {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    padding: 46px 60px;
+    margin: 0 auto 40px;
+    background: #f5f2ec;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.08);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(0,0,0,0.015), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(0,0,0,0.015), transparent 40%);
+  }
+  .page:last-child { margin-bottom: 0; }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  /* corner ornaments — sit at the actual edges of the (content-hugging) card */
+  .corner { position: absolute; width: 56px; height: 56px; opacity: 0.85; }
+  .corner.tl { top: 14px; left: 14px; }
+  .corner.tr { top: 14px; right: 14px; transform: scaleX(-1); }
+  .corner.bl { bottom: 14px; left: 14px; transform: scaleY(-1); }
+  .corner.br { bottom: 14px; right: 14px; transform: scale(-1,-1); }
 
-body{
-    font-family: Georgia, serif;
-    background:#f8f5ef;
-    color:#3d342d;
-}
+  .gold { stroke: #b8944f; fill: none; stroke-width: 1.2; }
+  .gold-fill { fill: #b8944f; }
 
-.page{
-    width:600px;
-    height:1500px;
-    margin:40px auto;
-    background:#f8f5ef;
-    padding:70px;
-    border:2px solid #df8f5ef;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-.cover{
-    text-align:center;
-    min-height:700px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.cover h1{
-    font-size:90px;
-    color:#7b5b46;
-}
-
-.cover h2{
-    letter-spacing:5px;
-    font-weight:normal;
-    margin-top:10px;
-}
-
-.section{
-    margin-bottom:70px;
-}
-
-.section h2{
-    text-align:center;
-    font-size:34px;
-    margin-bottom:40px;
-    color:#5d4a38;
-    border-bottom:1px solid #c8a96b;
-    padding-bottom:10px;
-}
-
-.item{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.item h3{
-    font-size:22px;
-    margin-bottom:8px;
-}
-
-.item p{
-    font-style:italic;
-    line-height:1.5;
-}
-
-.price{
-    display:block;
-    margin-top:10px;
-    font-size:22px;
-    font-weight:bold;
-    color:#6b4b2d;
-}
-
-@media(max-width:700px){
-
-
-
-}
-
-.corner {
+  /* ---- Title page ---- */
+  .title-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 60px;
+  }
+  .brand-name {
+    font-size: 90px;
+    color: #4a3627;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    position: relative;
+  }
+  .flower {
+    width: 46px;
+    margin-bottom: -10px;
+  }
+  .brand-sub {
+    letter-spacing: 8px;
+    font-size: 17px;
+    color: #4a3627;
+    margin-top: 6px;
+  }
+  .divider {
+    width: 260px;
+    height: 1px;
+    background: #b8944f;
+    margin: 26px auto 0;
+    position: relative;
+  }
+  .divider::after {
+    content: "❖";
     position: absolute;
-    width: 90px;
-    z-index: 1000;
-    pointer-events: none;
-}
+    top: -9px; left: 50%;
+    transform: translateX(-50%);
+    background: #f5f2ec;
+    padding: 0 8px;
+    color: #b8944f;
+    font-size: 13px;
+  }
 
-.top-left {
-    top: 0;
-    left: 0;
-}
+  /* ---- Section styling ---- */
+  .section-title {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: #2f3a4a;
+    margin: 6px 0 4px;
+  }
+  .section-divider {
+    width: 140px;
+    height: 1px;
+    background: #b8944f;
+    margin: 0 auto 26px;
+    position: relative;
+  }
+  .section-divider::after {
+    content: "•";
+    position: absolute;
+    top: -8px; left: 50%;
+    transform: translateX(-50%);
+    background: #f5f2ec;
+    padding: 0 6px;
+    color: #b8944f;
+    font-size: 12px;
+  }
+  .section { margin-bottom: 34px; }
 
-.top-right {
-    top: 0;
-    right: 0;
-}
+  .item { text-align: center; margin-bottom: 20px; }
+  .item-name {
+    font-size: 13.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #3a2e28;
+    margin-bottom: 4px;
+  }
+  .item-desc-native {
+    font-style: italic;
+    font-size: 12.5px;
+    color: #55483d;
+    line-height: 1.4;
+  }
+  .item-desc-en {
+    font-style: italic;
+    font-size: 12.5px;
+    color: #55483d;
+    line-height: 1.4;
+  }
+  .item-price {
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 1px;
+    color: #3a2e28;
+    margin-top: 6px;
+  }
 
-.bottom-left {
-    bottom: 0;
-    left: 0;
-}
+  .extra-table {
+    width: 70%;
+    margin: 10px auto 0;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .extra-table td { padding: 3px 10px; }
+  .extra-table .label { font-style: italic; text-align: left; }
+  .extra-table .price { font-weight: 700; text-align: right; }
 
-.bottom-right {
-    bottom: 0;
-    right: 0;
-}
-
-
-
-.page{
-padding:30px;
-margin:15px;
-}
-
-.cover h1{
-font-size:60px;
-}
-
-.section h2{
-font-size:26px;
-}
-
-.item h3{
-font-size:18px;
-}
-
-}
-
-.menu{
-    width:600px;
-    height:850px;
-    background:#fcfaf6;
-    position:relative;
-    border:1px solid #d8c29a;
-}
-
-.corner{
-    width:90px;
-    position:absolute;
-}
-
-.top-left{
-    top:20px;
-    left:20px;
-}
-
-.top-right{
-    top:20px;
-    right:20px;
-}
-
-.bottom-left{
-    bottom:20px;
-    left:20px;
-}
-
-.bottom-right{
-    bottom:20px;
-    right:20px;
-}
-
-.logo{
-    position:absolute;
-    top:280px;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-.logo img{
-    width:350px;
-}
-
+  .extra-note {
+    text-align: center;
+    margin-top: 22px;
+  }
+  .extra-note-title {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
 </style>
-
 </head>
-
 <body>
 
-<!-- COVER -->
+<!-- ================= TITLE PAGE ================= -->
+<div class="page title-page">
+  <div class="corner tl">
+    <svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,30 Q2,2 30,2" />
+      <path d="M10,38 Q10,10 38,10" />
+      <circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/>
+      <circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/>
+      <circle cx="18" cy="18" r="3" />
+      <circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/>
+    </svg>
+  </div>
+  <div class="corner tr">
+    <svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,30 Q2,2 30,2" />
+      <path d="M10,38 Q10,10 38,10" />
+      <circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/>
+      <circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/>
+      <circle cx="18" cy="18" r="3" />
+      <circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/>
+    </svg>
+  </div>
+  <div class="corner bl">
+    <svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,30 Q2,2 30,2" />
+      <path d="M10,38 Q10,10 38,10" />
+      <circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/>
+      <circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/>
+      <circle cx="18" cy="18" r="3" />
+      <circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/>
+    </svg>
+  </div>
+  <div class="corner br">
+    <svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,30 Q2,2 30,2" />
+      <path d="M10,38 Q10,10 38,10" />
+      <circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/>
+      <circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/>
+      <circle cx="18" cy="18" r="3" />
+      <circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/>
+    </svg>
+  </div>
 
-<div class="menu">
+  <svg class="flower" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#c9a25a" stroke-width="2">
+      <ellipse cx="50" cy="30" rx="10" ry="16"/>
+      <ellipse cx="50" cy="70" rx="10" ry="16"/>
+      <ellipse cx="30" cy="50" rx="16" ry="10"/>
+      <ellipse cx="70" cy="50" rx="16" ry="10"/>
+      <ellipse cx="35" cy="35" rx="12" ry="8" transform="rotate(-45 35 35)"/>
+      <ellipse cx="65" cy="65" rx="12" ry="8" transform="rotate(-45 65 65)"/>
+      <ellipse cx="65" cy="35" rx="12" ry="8" transform="rotate(45 65 35)"/>
+      <ellipse cx="35" cy="65" rx="12" ry="8" transform="rotate(45 35 65)"/>
+    </g>
+    <circle cx="50" cy="50" r="6" fill="#b8944f"/>
+  </svg>
 
-    <!-- Top Left -->
-    <img src="cornertop.png" class="corner top-left">
+  <h1 class="brand-name">Daisy</h1>
+  <div class="brand-sub">RESTAURANT &amp; VINOTEKE</div>
+  <div class="divider"></div>
+</div>
 
-    <!-- Top Right -->
-    <img src="cornertopright.png" class="corner top-right">
+<!-- Macro used to draw corners on content pages, repeated inline since HTML has no includes -->
 
-    <!-- Bottom Left -->
-    <img src="cornerbottomleft.png" class="corner bottom-left">
+<!-- ================= PAGE 2: ANTIPASTA + SALLATA ================= -->
+<div class="page">
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
-    <!-- Bottom Right -->
-    <img src="cornerbottomright.png" class="corner bottom-right">
-
-    <!-- Logo -->
-    <div class="logo">
-        <img src="Logo Daisy.png" alt="Daisy Restaurant">
+  <div>
+    <h2 class="section-title">ANTIPASTA / STARTERS</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Antipastë e Ngrohtë Deti / Hot Seafood Appetizer</div>
+        <div class="item-desc-native">Qofte peshku me krem, Caponata me ton, Lazanja me Ragu Deti</div>
+        <div class="item-desc-en">(Creamy Fish Balls, Tuna Caponata, Lasagna with Seafood Ragu)</div>
+        <div class="item-price">950 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Antipastë e Ngrohtë Toke / Hot Land Appetizer</div>
+        <div class="item-desc-native">Qofte viçi të shtëpisë, Lazanja me ragu viçi, Kaponata Siçiliane</div>
+        <div class="item-desc-en">(Homemade beef meatballs, Lasagna with beef ragu, Sicilian caponata)</div>
+        <div class="item-price">950 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Antipastë Mikse / Mixed Appetizer</div>
+        <div class="item-desc-native">Proshuta, Djathëra, Salca e shtëpisë e shefit</div>
+        <div class="item-desc-en">(Ham, Cheese, Chef's homemade sauce)</div>
+        <div class="item-price">1500 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Patate Frite / French Fries</div>
+        <div class="item-price">400 ALL</div>
+      </div>
     </div>
 
-</div> 
+    <h2 class="section-title">SALLATA / SALADS</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Sallata e Shefit / Chef's Salad</div>
+        <div class="item-desc-native">Domate, Burrata, Vaj Borziloku, Peshk Ton, Aceto Balsamico, Kastravec Turshi</div>
+        <div class="item-desc-en">(Tomatoes, Burrata, Basil Oil, Tuna, Balsamic Vinegar, Pickled Cucumber)</div>
+        <div class="item-price">800 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Sallatë Rukola / Arugula Salad</div>
+        <div class="item-desc-native">Sallatë Rukola, Pomodorini, Grana, Salcë e Freskët</div>
+        <div class="item-desc-en">(Arugula Salad, Pomodorini, Grana, Fresh Sauce)</div>
+        <div class="item-price">500 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Sallatë Çezar / Caesar Salad</div>
+        <div class="item-desc-native">Iceberg, Misër i ëmbël, Karkalec, Pomodorini</div>
+        <div class="item-desc-en">(Iceberg, Sweet Corn, Shrimp, Pomodorini)</div>
+        <div class="item-price">650 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Sallatë Daisy / Daisy Salad</div>
+        <div class="item-desc-native">Sallatë Jeshile, Avokado, Portokall, Finok, Salmon</div>
+        <div class="item-desc-en">(Green Salad, Avocado, Orange, Fennel, Salmon)</div>
+        <div class="item-price">700 ALL</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-<!-- PAGE 2 -->
-
+<!-- ================= PAGE 3: PINZA + SUPA ================= -->
 <div class="page">
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
-    <img src="cornertop.png" class="corner top-left" alt="">
-    <img src="cornertopright.png" class="corner top-right" alt="">
-    <img src="cornerbottomleft.png" class="corner bottom-left" alt="">
-    <img src="cornerbottomright.png" class="corner bottom-right" alt="">
-    
-    
-<div class="section">
+  <div>
+    <h2 class="section-title">PINZA / PINSA</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Pinsa Ragu</div>
+        <div class="item-desc-native">Ragu Viçi, Stracciatella</div>
+        <div class="item-desc-en">(Beef Ragu, Stracciatella)</div>
+        <div class="item-price">800 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Pinsa Rukola / Pinsa Arugula</div>
+        <div class="item-desc-native">Sallatë Rukola, Pomodorini, Acuge, Vaj Hudhrash</div>
+        <div class="item-desc-en">(Arugula Salad, Pomodorini, Anchovy, Garlic Oil)</div>
+        <div class="item-price">550 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Pinsa Pomodoro</div>
+        <div class="item-desc-native">Domate e Freskët, Vaj, Hudhër, Borzilok</div>
+        <div class="item-desc-en">(Fresh Tomatoes, Oil, Garlic, Basil)</div>
+        <div class="item-price">500 ALL</div>
+      </div>
+    </div>
 
-<h2>ANTIPASTA / STARTERS</h2>
-
-
-<div class="item">
-<h3>Antipastë e Ngrohtë Deti/ Hot Seafood Appetizer</h3>
-<p>
-Qofte peshku me krem, Caponata me ton, Lazanja me Ragu Deti 
-<br>
-(Creamy Fish Balls, Tuna Caponata, Lasagna with Seafood Ragu)
-</p>
-<span class="price">950 ALL</span>
+    <h2 class="section-title" style="margin-top:50px;">SUPA / SOUPS</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Supë Perime / Vegetable Soup</div>
+        <div class="item-desc-native">Patate, Selino, Karrotë, Kungull, Qepë</div>
+        <div class="item-desc-en">(Potato, Celery, Carrot, Pumpkin, Onion)</div>
+        <div class="item-price">400 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Supë Peshku / Fish Soup</div>
+        <div class="item-desc-native">Patate, Selino, Karrotë, Kungull, Qepë, Peshk</div>
+        <div class="item-desc-en">(Potato, Celery, Carrot, Pumpkin, Onion, Fish)</div>
+        <div class="item-price">400 ALL</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="item">
-<h3>Antipastë e Ngrohtë Toke/ Hot Land Appetizer</h3>
-<p>
-Qofte viçi të shtëpisë, Lazanja me ragu viçi, Kaponata Siçiliane
-<br>
-(Homemade beef meatballs, Lasagna with beef ragu, Sicilian caponata)
-</p>
-<span class="price">950 ALL</span>
-</div>
-
-<div class="item">
-<h3>Antipastë Mikse/ Mixed Appetizer</h3>
-<p>
-Proshuta, Djathëra, Salca e shtëpisë e shefit
-<br>
-(Ham, Cheese, Chef's homemade sauce)
-</p>
-<span class="price">1500 ALL</span>
-</div>
-
-<div class="item">
-<h3>French Fries</h3>
-<span class="price">400 ALL</span>
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>SALLATA/ SALADS</h2>
-
-<div class="item">
-<h3>Chef's Salad</h3>
-<p>
-Domate, Stracciatella, Vaj Borziloku, Peshk Ton, Aceto Balsamico
-<br>
-(Tomatoes, Stracciatella, Basil Oil, Tuna, Balsamic Vinegar)
-</p>
-<span class="price">800 ALL</span>
-</div>
-
-<div class="item">
-<h3>Sallatë Rukola/ Arugula Salad</h3>
-<p>
-Sallatë Rukola, Pomodorini, Grana, Salcë e Freskët
-<br>
-(Arugula Salad, Pomodorini, Grana, Fresh Sauce)
-</p>
-<span class="price">500 ALL</span>
-</div>
-
-<div class="item">
-<h3>Sallatë Cezar/ Caesar Salad</h3>
-<p>
-Iceberg, Misër i ëmbël, Karkalec, Pomodorini 
-<br>
-(Iceberg, Sweet Corn, Shrimp, Pomodorini)
-</p>
-<span class="price">650 ALL</span>
-</div>
-
-<div class="item">
-<h3>Sallatë Daisy/ Daisy Salad</h3>
-<p>
-Sallatë Jeshile, Avokado, Portokall, Finok, Salmon
-<br>
-(Green Salad, Avocado, Orange, Fennel, Salmon)
-</p>
-<span class="price">700 ALL</span>
-</div>
-
-</div>
-
-</div>
-
-<!-- PAGE 3 -->
-
-<div class="corner top-left"></div>
-<div class="corner top-right"></div>
-<div class="corner bottom-left"></div>
-<div class="corner bottom-right"></div>
-
+<!-- ================= PAGE 4: PASTA ================= -->
 <div class="page">
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
-<div class="section">
-
-<h2>PINZA/ PINSA</h2>
-
-<div class="item">
-<h3>Pinsa Ragu</h3>
-<p>
-Ragu Viçi, Stracciatella  
-<br>
-(Beef Ragu, Stracciatella)
-</p>
-<span class="price">800 ALL</span>
+  <div>
+    <h2 class="section-title">PASTA</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Pasta Aglio Olio Pomodoro</div>
+        <div class="item-desc-native">Pomodorini, Vaj, Hudhër, Borzilok</div>
+        <div class="item-desc-en">(Pomodorini, Oil, Garlic, Basil)</div>
+        <div class="item-price">550 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Rigatoni alla Montecarlo</div>
+        <div class="item-desc-native">Pasta Artizanale</div>
+        <div class="item-desc-en">(Artisanal Pasta)</div>
+        <div class="item-price">600 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Linguini alle Vongole</div>
+        <div class="item-desc-native">Vongole, Vaj Hudhre, Vaj i Aromatizuar</div>
+        <div class="item-desc-en">(Clams, Garlic Oil, Flavored Oil)</div>
+        <div class="item-price">700 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Callamarata alla Callamari</div>
+        <div class="item-desc-native">Pasta Artizanale, Vaj Hudhrash, Pomodorini, Callamari</div>
+        <div class="item-desc-en">(Artisanal Pasta, Garlic Oil, Pomodorini, Calamari)</div>
+        <div class="item-price">650 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Pacheri Ragu Sepia</div>
+        <div class="item-desc-native">Pasta Artizanale, Vaj Hudhrash, Sepie, Pomodorini, Vaj i Aromatizuar</div>
+        <div class="item-desc-en">(Artisanal Pasta, Garlic Oil, Sepia, Pomodorini, Flavored Oil)</div>
+        <div class="item-price">750 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Ravioli con Ricota</div>
+        <div class="item-desc-native">Pasta Artizanale, Djathë Gorgonzola, Pana, Arra</div>
+        <div class="item-desc-en">(Artisan Pasta, Gorgonzola Cheese, Bread, Walnuts)</div>
+        <div class="item-price">900 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Orecchiette Funghi Porcini e Salsiccia</div>
+        <div class="item-desc-native">Pasta Artizanale, Funghi Porcini, Salcice</div>
+        <div class="item-desc-en">(Artisan Pasta, Porcini Mushrooms, Sausages)</div>
+        <div class="item-price">800 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Spaghetti Fruta Deti / Seafood Spaghetti</div>
+        <div class="item-desc-native">Pomodorini, Sepie, Karkalec, Kallamar, Vaj Ulliri</div>
+        <div class="item-desc-en">(Pomodorini, Sepia, Shrimp, Squid, Olive Oil)</div>
+        <div class="item-price">750 ALL</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="item">
-<h3>Pinsa Rukola/ Pinsa Arugula</h3>
-<p>
-Sallatë Rukola, Pomodorini, Acuge, Vaj Hudhrash 
-<br>
-(Arugula Salad, Pomodorini, Anchovy, Garlic Oil)
-</p>
-<span class="price">550 ALL</span>
-</div>
-
-<div class="item">
-<h3>Pinsa Pomodoro</h3>
-<p>
-Domate e Freskët, Vaj, Hudhër, Borzilok
-<br>
-(Fresh Tomatoes, Oil, Garlic, Basil)
-</p>
-<span class="price">500 ALL</span>
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>SUPA/ SOUPS</h2>
-
-<div class="item">
-<h3>Supë Perime/ Vegetable Soup</h3>
-<p>
-Patate, Selino, Karrotë, Kungull, Qepë
-<br>
-(Potato, Celery, Carrot, Pumpkin, Onion)
-</p>
-<span class="price">400 ALL</span>
-</div>
-
-<div class="item">
-<h3>Supë Peshku/ Fish Soup</h3>
-<p>
-Patate, Selino, Karrotë, Kungull, Qepë, Peshk
-<br>
-(Potato, Celery, Carrot, Pumpkin, Onion, Fish)
-</p>
-<span class="price">400 ALL</span>
-</div>
-
-</div>
-
-</div>
-
-<!-- PAGE 4-->
-
-<div class="corner top-left"></div>
-<div class="corner top-right"></div>
-<div class="corner bottom-left"></div>
-<div class="corner bottom-right"></div>
-
+<!-- ================= PAGE 5: RISOTTO ================= -->
 <div class="page">
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
-
-<div class="section">
-
-    
-<h2>PASTA</h2>
-
-<div class="item">
-<h3>Pasta Aglio Olio Pomodoro</h3>
-<p>
-Pomodorini, Vaj, Hudhër, Borzilok
-<br>
-(Pomodorini, Oil, Garlic, Basil)
-</p>
-<span class="price">550 ALL</span>
+  <div>
+    <h2 class="section-title">RISOTTO</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Risotto Umami</div>
+        <div class="item-desc-native">Oriz sicilian, Vaj hudhrash, Karkalec Viola, Oktapod, Pomodorini, Vaj i Aromatizuar</div>
+        <div class="item-desc-en">(Sicilian Rice, Garlic Oil, Viola Shrimp, Octopus, Pomodorini, Flavored Oil)</div>
+        <div class="item-price">1200 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Risotto Kungull Karkalec / Shrimp Zucchini Risotto</div>
+        <div class="item-desc-native">Oriz Sicilian, Vaj hudhrash, Kungull, Karkalec, Zaferano</div>
+        <div class="item-desc-en">(Sicilian Rice, Garlic Oil, Zucchini, Shrimp, Zaferano)</div>
+        <div class="item-price">700 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Risotto Daisy</div>
+        <div class="item-desc-native">Oriz Sicilian, Patate, Mix krem djathërash, Panna</div>
+        <div class="item-desc-en">(Sicilian Rice, Potatoes, Cream Cheese Mix, Panna)</div>
+        <div class="item-price">600 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Risotto Fruta Deti / Seafood Risotto</div>
+        <div class="item-desc-native">Oriz Sicilian, Vaj Hudhrash, Kallamar, Karkalec, Sepie, Midhje, Brodo Karkaleci</div>
+        <div class="item-desc-en">(Sicilian Rice, Garlic Oil, Squid, Shrimp, Cuttlefish, Mussels, Shrimp Broth)</div>
+        <div class="item-price">800 ALL</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="item">
-<h3>Rigatoni Alla Montecarlo</h3>
-<p>
-Pasta Artizanale
-<br>
-(Artisanal Pasta)
-</p>
-<span class="price">600 ALL</span>
-</div>
-
-<div class="item">
-<h3>Linguini Alle Vongole</h3>
-<p>
-Vongole, Vaj Hudhre, Vaj i Aromatizuar
-<br>
-(Clams, Garlic Oil, Flavored Oil)
-</p>
-<span class="price">700 ALL</span>
-</div>
-
-<div class="item">
-<h3>Callamarata Alla Callamari</h3>
-<p>
-Pasta Artizanale, Vaj Hudhrash, Pomodorini, Callamari
-<br>
-(Artisanal Pasta, Garlic Oil, Pomodorini, Calamari)
-</p>
-<span class="price">650 ALL</span>
-</div>
-
-<div class="item">
-<h3>Pacheri Ragu Sepia</h3>
-<p>
-Pasta Artizanale, Vaj Hudhrash, Sepie, Pomodorini, Vaj I Aromatizuar
-<br>
-(Artisanal Pasta, Garlic Oil, Sepia, Pomodorini, Flavored Oil)
-</p>
-<span class="price">750 ALL</span>
-</div>
-
-<div class="item">
-<h3>Ravioli Con Ricota</h3>
-<p>
-Pasta Artizanale, Djathë Gorgonzola, Pana, Arra
-<br>
-(Artisan Pasta, Gorgonzola Cheese, Bread, Walnuts)
-</p>
-<span class="price">900 ALL</span>
-</div>
-
-<div class="item">
-<h3>Orecchiette Funghi Porcini E Salsiccia</h3>
-<p>
-Pasta Artizanale, Funghi Porcini, Salcice
-<br>
-(Artisan Pasta, Porcini Mushrooms, Sausages)
-</p>
-<span class="price">800 ALL</span>
-</div>
-
-<div class="item">
-<h3>Spaghetti Fruta Deti/Seafood Spaghetti</h3>
-<p>
-Pomodorini, Midhje, Karkalec, Kallamar, Vaj Ulliri
-<br>
-(Pomodorini, Mussel, Shrimp, Squid, Olive Oil)
-</p>
-<span class="price">800 ALL</span>
-</div>
-
-</div>
-
-</div>
-
-<!-- PAGE 5 -->
-
-<div class="corner top-left"></div>
-<div class="corner top-right"></div>
-<div class="corner bottom-left"></div>
-<div class="corner bottom-right"></div>
-
+<!-- ================= PAGE 6: PJATA TE PARA / FIRST DISH ================= -->
 <div class="page">
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
-<div class="section">
+  <div>
+    <h2 class="section-title">PJATA TË PARA / FIRST DISH</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Sallatë Fruta Deti / Seafood Salad</div>
+        <div class="item-desc-native">Karkalec, Oktapod, Kallamar, Sepie, Finokio</div>
+        <div class="item-desc-en">(Shrimp, Octopus, Squid, Cuttlefish, Finocchio)</div>
+        <div class="item-price">1200 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Acuge Krudo / Crudo Anchovies</div>
+        <div class="item-desc-native">Acuge të marinuara në verë dhe limon</div>
+        <div class="item-desc-en">(Anchovies marinated in wine and lemon)</div>
+        <div class="item-price">500 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Acuge Frite / Fried Anchovies</div>
+        <div class="item-price">500 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Fritura Deti Mikse / Mixed Seafood Fried</div>
+        <div class="item-desc-native">Karkalec, Barbun, Kallamar, Sepie, Kungull</div>
+        <div class="item-desc-en">(Shrimp, Mullet, Squid, Cuttlefish, Zucchini)</div>
+        <div class="item-price">1300 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Karkalec me Kadaif / Shrimp with Kadaif</div>
+        <div class="item-desc-native">Karkalec i mbështjellë në kadaif, frite i shoqëruar me salcë koktail</div>
+        <div class="item-desc-en">(Shrimp wrapped in kadaif, fried and served with cocktail sauce)</div>
+        <div class="item-price">800 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Oktapod Zgare / Grilled Octopus</div>
+        <div class="item-desc-native">Oktapod Zgare i shoqëruar me Patate, Panxhar</div>
+        <div class="item-desc-en">(Grilled Octopus with Potatoes, Beets)</div>
+        <div class="item-price">900 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Tartar Levreku 200gr / Sea Bass Tartar 200gr</div>
+        <div class="item-desc-native">Levrek, Lëngu Magjik i Marinimit të Shtëpisë, Shegë</div>
+        <div class="item-desc-en">(Sea Bass, Magical Homemade Marinade, Pomegranate)</div>
+        <div class="item-price">800 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Tartar Salmoni 200gr / Salmon Tartar 200gr</div>
+        <div class="item-desc-native">Salmon, Avokado, Lëngu Magjik i Marinimit të Shtëpisë</div>
+        <div class="item-desc-en">(Salmon, Avocado, Magic Home Marinade)</div>
+        <div class="item-price">900 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Mix Crudo</div>
+        <div class="item-desc-native">Karpacio Levreku, Karkalec, Karpacio Oktapodi, Salmon i Shtëpisë i Tymosur/Marinuar</div>
+        <div class="item-desc-en">(Sea Bass Carpaccio, Shrimp, Octopus Carpaccio, House Smoked/Marinated Salmon)</div>
+        <div class="item-price">1750 ALL</div>
+      </div>
+    </div>
 
-<h2>RISOTTO</h2>
-
-<div class="item">
-<h3>Risotto Umami</h3>
-<p>
-Oriz sicilian, Vaj hudhrash, Karkalec Viola, Oktapod, Pomodorini, Vaj i Aromatizua
-<br>
-(Sicilian Rice, Garlic Oil, Viola Shrimp, Octopus, Pomodorini, Flavored Oil)
-</p>
-<span class="price">1200 ALL</span>
+    <div class="extra-note">
+      <div class="extra-note-title">Extra Crudo</div>
+      <table class="extra-table">
+        <tr><td class="label">Scampi</td><td class="price">4500 ALL/kg</td><td class="label">Tiger</td><td class="price">5500 ALL/kg</td></tr>
+        <tr><td class="label">Viola</td><td class="price">6500 ALL/kg</td><td class="label">Ostriche</td><td class="price">2000 ALL/kg</td></tr>
+      </table>
+    </div>
+  </div>
 </div>
 
-<div class="item">
-<h3>Risotto Kungull Karkalec/Shrimp Zucchini Risotto</h3>
-<p>
-Oriz Sicilian, Vaj hudhrash, Kungull, Karkalec, Zaferano
-<br>
-(Sicilian Rice, Garlic Oil, Zucchini, Shrimp, Zaferano)
-</p>
-<span class="price">700 ALL</span>
-</div>
-
-<div class="item">
-<h3>Risotto Daisy</h3>
-<p>
-Oriz Sicilian, Patate, Mix krem djathërash, Panna
-<br>
-(Sicilian Rice, Potatoes, Cream Cheese Mix, Panna)
-</p>
-<span class="price">600 ALL</span>
-</div>
-
-<div class="item">
-<h3>Risotto Fruta Deti/Seafood Risotto</h3>
-<p>
-Oriz Sicilian, Vaj Hudhrash, Kallamar, Karkalec, Midhje, Brodo Karkaleci
-<br>
-(Sicilian Rice, Garlic Oil, Squid, Shrimp, Mussels, Shrimp Broth)
-</p>
-<span class="price">800 ALL</span>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- PAGE 6-->
-
-<div class="corner top-left"></div>
-<div class="corner top-right"></div>
-<div class="corner bottom-left"></div>
-<div class="corner bottom-right"></div>
-
+<!-- ================= PAGE 7: EKSPOZITORI / EXHIBITOR ================= -->
 <div class="page">
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
+  <div>
+    <h2 class="section-title">EKSPOZITORI / EXHIBITOR</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Levrek 400/600 / Sea Bass 400/600</div>
+        <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
+        <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
+        <div class="item-price">2600 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Koce 400/600 / Cod 400/600</div>
+        <div class="item-desc-native">Patate Baby, Ullinj, Pomodorini</div>
+        <div class="item-desc-en">(Baby potatoes, olives, pomodorini)</div>
+        <div class="item-price">2600 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Levrek / Bass</div>
+        <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
+        <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
+        <div class="item-price">4500 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Koce / Cod</div>
+        <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
+        <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
+        <div class="item-price">4500 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Gjeli / Gurnard</div>
+        <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
+        <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
+        <div class="item-price">4700 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Peshkatriçe / Monkfish</div>
+        <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
+        <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
+        <div class="item-price">4000 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Dental / Dentex</div>
+        <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
+        <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
+        <div class="item-price">8500 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Aragosta</div>
+        <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
+        <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
+        <div class="item-price">16000 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Astice</div>
+        <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
+        <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
+        <div class="item-price">14000 ALL/kg</div>
+      </div>
+    </div>
 
-<div class="section">
-
-    
-<h2>PJATA TË PARA/FIRST DISH</h2>
-
-<div class="item">
-<h3>Sallate Fruta Deti/Seafood Salad</h3>
-<p>
-Karkalec, Oktapod, Kallamar, Sepie, Finokio
-<br>
-(Shrimp, Octopus, Squid, Cuttlefish, Finocchio)
-</p>
-<span class="price">1200 ALL</span>
+    <div class="extra-note">
+      <div class="extra-note-title">Extra</div>
+      <table class="extra-table" style="width:85%;">
+        <tr><td class="label">Shoqëruar me Pasta (Served with Pasta)</td><td class="price">500 ALL</td></tr>
+        <tr><td class="label">"Pjekje me Kripë" (Shoqëruar me Perime të Ziera dhe Marinimi i Shtëpisë) &mdash; ("Salt Roast", Along with Boiled Vegetables and Homemade Marinade)</td><td class="price">1000 ALL</td></tr>
+      </table>
+    </div>
+  </div>
 </div>
 
-
-<div class="item">
-<h3>Acuge Krudo/Crudo Anchovies</h3>
-<p>
-Acuge të marinuara në verë dhe limon
-<br>
-(Anchovies marinated in wine and lemon)
-</p>
-<span class="price">500 ALL</span>
-</div>
-
-<div class="item">
-<h3>Acuge Frite/Fried Anchovies</h3>
-<span class="price">500 ALL</span>
-</div>
-
-<div class="item">
-<h3>Fritura Deti Mikse/Mixed Seafood Fried</h3>
-<p>
-Karkalec, Barbun, Kallamar, Sepie, Kungull
-<br>
-(Shrimp, Mullet, Squid, Cuttlefish, Zucchini)
-</p>
-<span class="price">1300 ALL</span>
-</div>
-
-<div class="item">
-<h3>Karkalec Me Kadaif/Shrimp With Kadaif</h3>
-<p>
-Karkalec i mbështjellë në kadaif, frite i shoqëruar me salcë koktail
-<br>
-(Shrimp wrapped in kadaif, fried and served with cocktail sauce)
-</p>
-<span class="price">800 ALL</span>
-</div>
-
-<div class="item">
-<h3>Oktapod Zgare/Grilled Octopus</h3>
-<p>
-Oktapod Zgare I shoqëruar me Patate, Panxhar
-<br>
-(Grilled Octopus with Potatoes, Beets)
-</p>
-<span class="price">900 ALL</span>
-</div>
-
-<div class="item">
-<h3>Tartar Levreku 200gr/Sea Bass Tartar 200gr</h3>
-<p>
-Levrek, Lëngu Magjik i Marinimit të Shtëpisë, Shegë
-<br>
-(Sea Bass, Magical Homemade Marinade, Pomegranate)
-</p>
-<span class="price">800 ALL</span>
-</div>
-
-<div class="item">
-<h3>Tartar Salmoni 200gr/Salmon Tartar 200gr</h3>
-<p>
-Salmon, Avokado, Lëngu Magjik i Marinimit të Shtëpisë
-<br>
-(Salmon, Avocado, Magic Home Marinade)
-</p>
-<span class="price">900 ALL</span>
-</div>
-
-<div class="item">
-<h3>Mix Crudo</h3>
-<p>
-Karpacio Levreku, Karkalec, Karpacio Oktapodi, Salmon i Shtëpisë i Tymosur/Marinuar
-<br>
-(Sea Bass Carpaccio, Shrimp, Octopus Carpaccio, House Smoked/Marinated Salmon)
-</p>
-<span class="price">1750 ALL</span>
-</div>
-
-<div class="item">
-<h3>Extra Crudo</h3>
-<p>
-Scampi &#160 &#160 &#160 &#160  <b>4500ALL/kg</b>   &#160  &#160  &#160  Tiger     &#160 &#160 &#160 &#160                                 <b>5500ALL/kg</b>
-<br>
-&#160 &#160 &#160  Viola &#160 &#160 &#160 &#160 &#160 &#160  <b>6500ALL/kg</b>   &#160  &#160  &#160  Ostriche  &#160 &#160 &#160 &#160 <b>2000ALL/kg</b>
-</p>
-</div>
-
-</div> 
-</div>  
-
-<!-- PAGE 7-->
-
-<div class="corner top-left"></div>
-<div class="corner top-right"></div>
-<div class="corner bottom-left"></div>
-<div class="corner bottom-right"></div>
-
+<!-- ================= PAGE 8: MISHI + EMBELSIRA ================= -->
 <div class="page">
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
+  <div>
+    <h2 class="section-title">MISHI / MEAT</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Fiorentina</div>
+        <div class="item-price">7000 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Fileto, Karrotë, Kungull, Gravy</div>
+        <div class="item-desc-en">(Fillet, Carrot, Zucchini, Gravy)</div>
+        <div class="item-price">1800 ALL/kg</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Fileto Pepe Verde</div>
+        <div class="item-price">2000 ALL/kg</div>
+      </div>
+    </div>
 
-<div class="section">
-
-    
-<h2>EKSPOZITORI/EXHIBITOR</h2>
-
-<div class="item">
-<h3>Levrek 400-600 /Sea Bass 400-600</h3>
-<p>
-Patate, Ullinj, Pomodorini
-<br>
-(Potatoes, Olives, Pomodorini)
-</p>
-<span class="price">2600 ALL/kg</span>
+    <h2 class="section-title" style="margin-top:70px;">ËMBËLSIRA / DESSERTS</h2>
+    <div class="section-divider"></div>
+    <div class="section">
+      <div class="item">
+        <div class="item-name">Cheese Cake</div>
+        <div class="item-price">500 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Tiramisu</div>
+        <div class="item-price">400 ALL</div>
+      </div>
+      <div class="item">
+        <div class="item-name">Soufflé</div>
+        <div class="item-price">500 ALL</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="item">
-<h3>Koce 400-600 /Cod 400-600</h3>
-<p>
-Patate Baby, Ullinj, Pomodorini
-<br>
-(Baby potatoes, olives, pomodorini)
-</p>
-<span class="price">2600 ALL/kg</span>
-</div>
-
-<div class="item">
-<h3>Levrek/Bass</h3>
-<p>
-Patate, Ullinj, Pomodorini
-<br>
-(Potatoes, Olives, Pomodorini)
-</p>
-<span class="price">4500 ALL/kg</span>
-</div>
-
-<div class="item">
-<h3>Koce/Cod</h3>
-<p>
-Patate, Ullinj, Pomodorini
-<br>
-(Potatoes, Olives, Pomodorini)
-</p>
-<span class="price">4500 ALL/kg</span>
-</div>
-
-<div class="item">
-<h3>Gjeli/Gurnard</h3>
-<p>
-Patate, Ullinj, Pomodorini
-<br>
-(Potatoes, Olives, Pomodorini)
-</p>
-<span class="price">4700 ALL/kg</span>
-</div>
-
-<div class="item">
-<h3>Peshkatrice/Monkfish</h3>
-<p>
-Patate, Ullinj, Pomodorini
-<br>
-(Potatoes, Olives, Pomodorini)
-</p>
-<span class="price">4000 ALL/kg</span>
-</div>
-
-<div class="item">
-<h3>Dental/Dentex</h3>
-<p>
-Patate, Ullinj, Pomodorini
-<br>
-(Potatoes, Olives, Pomodorini)
-</p>
-<span class="price">8500 ALL/kg</span>
-</div>
-
-<div class="item">
-<h3>Aragosta</h3>
-<p>
-Patate, Ullinj, Pomodorini
-<br>
-(Potatoes, Olives, Pomodorini)
-</p>
-<span class="price">16000 ALL/kg</span>
-</div>
-
-<div class="item">
-<h3>Astice</h3>
-<p>
-Patate, Ullinj, Pomodorini
-<br>
-(Potatoes, Olives, Pomodorini)
-</p>
-<span class="price">14000 ALL/kg</span>
-</div>
-
-</div> 
-</div>  
-
-
-<!-- PAGE 8 -->
-
-<div class="corner top-left"></div>
-<div class="corner top-right"></div>
-<div class="corner bottom-left"></div>
-<div class="corner bottom-right"></div>
-
-<div class="page">
-
-<div class="section">
-
-<h2>MISHI/MEAT</h2>
-
-<div class="item">
-<h3>Fiorentina</h3>
-<span class="price">7000 ALL/kg</span>
-</div>
-
-<div class="item">
-<h3>Fileto, Karrote, Kungull, Gravy <br> (Fillet, Carrot, Zucchini, Gravy) </h3>
-<span class="price">1800 ALL/kg</span>
-</div>
-
-<div class="item">
-<h3>Fileto Pepe Verde</h3>
-<span class="price">2000 ALL/kg</span>
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>EMBELSIRA/DESSERTS</h2>
-
-<div class="item">
-<h3>Cheese Cake</h3>
-<span class="price">500 ALL</span>
-</div>
-
-<div class="item">
-<h3>Tiramisu</h3>
-<span class="price">400 ALL</span>
-</div>
-
-<div class="item">
-<h3>Souffle</h3>
-<span class="price">500 ALL</span>
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-</div>
 </body>
 </html>
