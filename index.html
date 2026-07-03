@@ -37,7 +37,7 @@
   .page:last-child { margin-bottom: 0; }
 
   /* corner ornaments — sit at the actual edges of the (content-hugging) card */
-  .corner { position: absolute; width: 56px; height: 56px; opacity: 0.85; }
+  .corner { position: absolute; width: 150px; height: 150px; opacity: 0.85; }
   .corner.tl { top: 14px; left: 14px; }
   .corner.tr { top: 14px; right: 14px; transform: scaleX(-1); }
   .corner.bl { bottom: 14px; left: 14px; transform: scaleY(-1); }
@@ -53,7 +53,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 90px 60px;
+    padding: 46px 60px;
+    min-height: 950px;
   }
   .brand-name {
     font-size: 90px;
@@ -64,7 +65,7 @@
     position: relative;
   }
   .flower {
-    width: 46px;
+    width: 100px;
     margin-bottom: -10px;
   }
   .brand-sub {
@@ -174,8 +175,8 @@
 <div class="page title-page">
   <div class="corner tl">
     <svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2,30 Q2,2 30,2" />
-      <path d="M10,38 Q10,10 38,10" />
+      <path d="M2,30 L2,2 L30,2" />
+      <path d="M10,38 L10,10 L38,10" />
       <circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/>
       <circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/>
       <circle cx="18" cy="18" r="3" />
@@ -184,8 +185,8 @@
   </div>
   <div class="corner tr">
     <svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2,30 Q2,2 30,2" />
-      <path d="M10,38 Q10,10 38,10" />
+      <path d="M2,30 L2,2 L30,2" />
+      <path d="M10,38 L10,10 L38,10" />
       <circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/>
       <circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/>
       <circle cx="18" cy="18" r="3" />
@@ -194,8 +195,8 @@
   </div>
   <div class="corner bl">
     <svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2,30 Q2,2 30,2" />
-      <path d="M10,38 Q10,10 38,10" />
+      <path d="M2,30 L2,2 L30,2" />
+      <path d="M10,38 L10,10 L38,10" />
       <circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/>
       <circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/>
       <circle cx="18" cy="18" r="3" />
@@ -204,8 +205,8 @@
   </div>
   <div class="corner br">
     <svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2,30 Q2,2 30,2" />
-      <path d="M10,38 Q10,10 38,10" />
+      <path d="M2,30 L2,2 L30,2" />
+      <path d="M10,38 L10,10 L38,10" />
       <circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/>
       <circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/>
       <circle cx="18" cy="18" r="3" />
@@ -236,10 +237,10 @@
 
 <!-- ================= PAGE 2: ANTIPASTA + SALLATA ================= -->
 <div class="page">
-  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
   <div>
     <h2 class="section-title">ANTIPASTA / STARTERS</h2>
@@ -302,10 +303,10 @@
 
 <!-- ================= PAGE 3: PINZA + SUPA ================= -->
 <div class="page">
-  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
   <div>
     <h2 class="section-title">PINZA / PINSA</h2>
@@ -352,10 +353,10 @@
 
 <!-- ================= PAGE 4: PASTA ================= -->
 <div class="page">
-  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
   <div>
     <h2 class="section-title">PASTA</h2>
@@ -415,10 +416,10 @@
 
 <!-- ================= PAGE 5: RISOTTO ================= -->
 <div class="page">
-  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
   <div>
     <h2 class="section-title">RISOTTO</h2>
@@ -454,10 +455,10 @@
 
 <!-- ================= PAGE 6: PJATA TE PARA / FIRST DISH ================= -->
 <div class="page">
-  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
   <div>
     <h2 class="section-title">PJATA TË PARA / FIRST DISH</h2>
@@ -520,8 +521,8 @@
     <div class="extra-note">
       <div class="extra-note-title">Extra Crudo</div>
       <table class="extra-table">
-        <tr><td class="label">Scampi</td><td class="price">4500 ALL</td><td class="label">Tiger</td><td class="price">5500 ALL</td></tr>
-        <tr><td class="label">Viola</td><td class="price">6500 ALL</td><td class="label">Ostriche</td><td class="price">2000 ALL</td></tr>
+        <tr><td class="label">Scampi</td><td class="price">4500 ALL/kg</td><td class="label">Tiger</td><td class="price">5500 ALL/kg</td></tr>
+        <tr><td class="label">Viola</td><td class="price">6500 ALL/kg</td><td class="label">Ostriche</td><td class="price">2000 ALL/kg</td></tr>
       </table>
     </div>
   </div>
@@ -529,10 +530,10 @@
 
 <!-- ================= PAGE 7: EKSPOZITORI / EXHIBITOR ================= -->
 <div class="page">
-  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
   <div>
     <h2 class="section-title">EKSPOZITORI / EXHIBITOR</h2>
@@ -542,55 +543,55 @@
         <div class="item-name">Levrek 400/600 / Sea Bass 400/600</div>
         <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
         <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
-        <div class="item-price">2600 ALL</div>
+        <div class="item-price">2600 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Koce 400/600 / Cod 400/600</div>
         <div class="item-desc-native">Patate Baby, Ullinj, Pomodorini</div>
         <div class="item-desc-en">(Baby potatoes, olives, pomodorini)</div>
-        <div class="item-price">2600 ALL</div>
+        <div class="item-price">2600 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Levrek / Bass</div>
         <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
         <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
-        <div class="item-price">4500 ALL</div>
+        <div class="item-price">4500 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Koce / Cod</div>
         <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
         <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
-        <div class="item-price">4500 ALL</div>
+        <div class="item-price">4500 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Gjeli / Gurnard</div>
         <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
         <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
-        <div class="item-price">4700 ALL</div>
+        <div class="item-price">4700 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Peshkatriçe / Monkfish</div>
         <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
         <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
-        <div class="item-price">4000 ALL</div>
+        <div class="item-price">4000 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Dental / Dentex</div>
         <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
         <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
-        <div class="item-price">8500 ALL</div>
+        <div class="item-price">8500 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Aragosta</div>
         <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
         <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
-        <div class="item-price">16000 ALL</div>
+        <div class="item-price">16000 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Astice</div>
         <div class="item-desc-native">Patate, Ullinj, Pomodorini</div>
         <div class="item-desc-en">(Potatoes, Olives, Pomodorini)</div>
-        <div class="item-price">14000 ALL</div>
+        <div class="item-price">14000 ALL/kg</div>
       </div>
     </div>
 
@@ -606,10 +607,10 @@
 
 <!-- ================= PAGE 8: MISHI + EMBELSIRA ================= -->
 <div class="page">
-  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
-  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 Q2,2 30,2"/><path d="M10,38 Q10,10 38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 70 70" class="gold" xmlns="http://www.w3.org/2000/svg"><path d="M2,30 L2,2 L30,2"/><path d="M10,38 L10,10 L38,10"/><circle cx="30" cy="2" r="2.2" class="gold-fill" stroke="none"/><circle cx="2" cy="30" r="2.2" class="gold-fill" stroke="none"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="18" r="1" class="gold-fill" stroke="none"/></svg></div>
 
   <div>
     <h2 class="section-title">MISHI / MEAT</h2>
@@ -617,16 +618,16 @@
     <div class="section">
       <div class="item">
         <div class="item-name">Fiorentina</div>
-        <div class="item-price">7000 ALL</div>
+        <div class="item-price">7000 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Fileto, Karrotë, Kungull, Gravy</div>
         <div class="item-desc-en">(Fillet, Carrot, Zucchini, Gravy)</div>
-        <div class="item-price">1800 ALL</div>
+        <div class="item-price">1800 ALL/kg</div>
       </div>
       <div class="item">
         <div class="item-name">Fileto Pepe Verde</div>
-        <div class="item-price">2000 ALL</div>
+        <div class="item-price">2000 ALL/kg</div>
       </div>
     </div>
 
